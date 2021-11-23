@@ -6,6 +6,7 @@ source ../ci/env.sh
 
 : "${rust_stable_docker_image:=}" # Pacify shellcheck
 
+
 # shellcheck source=ci/rust-version.sh
 source ../ci/rust-version.sh
 ../ci/docker-run.sh "$rust_stable_docker_image" docs/build-cli-usage.sh
