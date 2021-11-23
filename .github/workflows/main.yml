@@ -4,6 +4,7 @@ on:
     workflows: ["solana_main"]
     types: 
       - completed
+
 # on:
 #   push:
 #     branches:  [master]
@@ -34,6 +35,15 @@ jobs:
       - name: cmd
         run : |
             .travis/export-github-repo.sh web3.js/ solana-web3.js
+        if: ${{ github.event_name != 'pull_request' }}
+      - name: Report Status
+        if: always()
+        uses: ravsamhq/notify-slack-action@v1
+        with:
+           status: ${{ job.status }}
+           notify_when: 'failure'
+        env:
+         SLACK_token: ${{ secrets.SLACK_TOKEN }}
   macos-artifacts:
     strategy:
       fail-fast: false
