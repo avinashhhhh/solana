@@ -38,3 +38,4 @@ if [[ -n $CI ]]; then
     ./publish-docs.sh
   fi
 fi
+
