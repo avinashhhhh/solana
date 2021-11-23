@@ -159,8 +159,8 @@ jobs:
              .travis/channel_restriction.sh edge beta || exit 0
              .travis/affects.sh docs/ .travis || exit 0
              cd docs/
-             source .travis/before_install.sh
-             source .travis/script.sh
+             .travis/before_install.sh
+             .travis/script.sh
       - name: setup-node
         uses: actions/checkout@v2
       - name: setup-node
