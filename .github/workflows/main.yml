@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 2
-
+      - run: $COMMIT_RANGE
       - run: echo "COMMIT_DIFF_RANGE=$(echo $COMMIT_RANGE)" >> $GITHUB_ENV
       - name: Set up Python
         uses: actions/setup-python@v2
