@@ -25,7 +25,10 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 2
-      - run: echo "COMMIT_DIFF_RANGE=$(echo $COMMIT_RANGE)" >> $GITHUB_ENV
+      - run: |
+            echo ${{github.event.before}}
+            echo ${{github.event.after}}
+            echo "COMMIT_DIFF_RANGE=$(echo $COMMIT_RANGE)" >> $GITHUB_ENV
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -81,9 +84,6 @@ jobs:
           SOURCE_DIR: 'travis-s3-upload1'
           DEST_DIR: 'giitsol1'
 
-
-
-  
   windows-artifact:
     strategy:
       fail-fast: false 
