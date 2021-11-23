@@ -26,8 +26,8 @@ jobs:
         with:
           fetch-depth: 2
       - run: |
-            echo ${{github.event.before}}
-            echo ${{github.event.after}}
+            echo "before=${{github.event.before}}"
+            echo "after=${{github.event.after}}"
             echo "COMMIT_DIFF_RANGE=$(echo $COMMIT_RANGE)" >> $GITHUB_ENV
       - name: Set up Python
         uses: actions/setup-python@v2
