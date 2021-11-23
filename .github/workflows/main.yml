@@ -17,7 +17,6 @@ jobs:
   Export_Github_Repositories:
     runs-on: ubuntu-latest
     env: 
-       VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
        GITHUB_TOKEN: ${{secrets.PAT}} 
        COMMIT_RANGE: ${{ github.event.before}}...${{ github.event.after}}
     steps:
@@ -131,6 +130,7 @@ jobs:
   Docs:
     runs-on: ubuntu-latest
     env: 
+       VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
        GITHUB_TOKEN: ${{secrets.PAT_NEW}} 
        GITHUB_EVENT_BEFORE: ${{ github.event.before }}
        GITHUB_EVENT_AFTER: ${{ github.event.after }}
