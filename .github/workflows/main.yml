@@ -138,7 +138,7 @@ jobs:
   
     runs-on: ubuntu-latest
     env: 
-       GITHUB_TOKEN: ${{secrets.PAT_NEW}} 
+       GITHUB_TOKEN: ${{secrets.PAT}} 
        GITHUB_EVENT_BEFORE: ${{ github.event.before }}
        GITHUB_EVENT_AFTER: ${{ github.event.after }}
        COMMIT_RANGE: ${{ github.event.before}}...${{ github.event.after}}
