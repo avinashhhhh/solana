@@ -11,6 +11,7 @@ source ../ci/rust-version.sh
 ../ci/docker-run.sh "$rust_stable_docker_image" docs/convert-ascii-to-svg.sh
 ./set-solana-release-tag.sh
 
+
 # Get current channel
 eval "$(../ci/channel-info.sh)"
 
